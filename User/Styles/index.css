@@ -1,0 +1,49 @@
+@keyframes cube{
+    from {
+      transform: scale(0);
+    }
+  }
+.Top-head
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card
+{
+    width: 32%;
+    padding: 15px;
+    /* background-color: white; */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    transition: 0.2s;
+    animation: 0.2s cube;
+}
+.card:nth-child(1) .card-header-title {background: linear-gradient(45deg, #464545, #989898);}
+.card:nth-child(2) .card-header-title {background: linear-gradient(45deg, #9c27b0, #d97ce8);}
+.card:nth-child(3) .card-header-title {background: linear-gradient(45deg, #73d008, #a3d26d);}
+.card:nth-child(4) .card-header-title {background: linear-gradient(45deg, #03a9f4, #93dbfb);}
+
+.card-header-body{
+    text-align: right;
+    /* margin-top: -50px; */
+}
+.card-header-body div{
+    font-size: 35px;
+    margin-top: -15px;
+    font-weight: bold;
+}
+.card:nth-child(1) .card-header-title {
+    background: linear-gradient(45deg, #464545, #989898);
+}
+
+.card-header-title {
+    text-align: center;
+    margin-top: -2.5rem !important;
+    border-radius: 20px;
+    width: 145px;
+    color: white;
+    padding: 32px 0;
+    font-size: 16px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+}

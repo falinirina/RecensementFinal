@@ -1,0 +1,33 @@
+{
+    "1.0.0":
+    {
+        "ajout": 
+        {
+            "interface": "Interface Web",
+            "AJAX": "Single Pages Application",
+            "ajoutTokantrano": "Permet d'ajouter des tokantrano",
+            "ajoutLocation": "Permet d'ajouter des Location"
+        }
+    },
+    "2.0.1":
+    {
+        "ajout":
+        {
+            "membre": "Permet d'ajouter des membre dans une Tokantrano"
+        },
+        "amelioration":
+        {
+            "ajoutTokantrano":"Amelioration de la formulaire d'ajout de tokantrano",
+            "interface": "Amelioration de l'Interface Web"
+        },
+        "suppression":
+        {
+            "AJAX":"Retour vers le multi Pages"
+        },
+        "correction":
+        {
+            "darkMode": "Correction de Dark Mode",
+            "Style": "Correction de certaine Style"
+        }
+    }
+}
