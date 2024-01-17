@@ -6,13 +6,14 @@
 
 <div class="filtre-mpiangona">
     <div class="ajouterForm">
-        <div id="ajouterT"><i class="ui icon add circle"></i></div>
+        <div><a class="ui button">Filtre</a></div>
+        <div><a href="listMpiangona.php" class="ui button">Liste</a></div>
     </div>
     <form action="mpiangona.php" method="GET" class="ui form" id="form-search">
+        <input type="text" name="find" placeholder="Recherche mpiangona" id="search" required>
         <button class="ui white button">
             <i class="ui icon search"></i>
         </button>
-        <input type="text" name="find" placeholder="Recherche mpiangona" id="search" required>
     </form>
 </div>
 <div class="cont-mpiangona">

@@ -58,8 +58,8 @@
         </div>
     </div>
     <div>
-      <button type="reset" onclick="hideAddFokF()" class="ui red button">Annuler</button>
-      <button type="submit" class="ui blue button">Ajouter</button>
+        <button type="submit" class="ui blue button">Ajouter</button>
+        <button type="reset" onclick="hideAddFokF()" class="ui red button">Annuler</button>
     </div>
 </form>
 <script>

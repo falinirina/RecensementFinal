@@ -80,8 +80,8 @@
         </div>
     </div>
     <div>
-      <button type="reset" class="ui red button" onclick="hideAddFok()">Annuler</button>
-      <button type="submit" class="ui blue button">Ajouter</button>
+        <button type="submit" class="ui blue button">Ajouter</button>
+        <button type="reset" class="ui red button" onclick="hideAddFok()">Annuler</button>
     </div>
 </form>
 <script>

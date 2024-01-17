@@ -38,7 +38,7 @@
                             'darkMode'=>$darkMode
                         );
                         if($employe['darkMode'] == "off") { $_SESSION["darkMode"]=false; } else { $_SESSION["darkMode"]=true; }
-                        header("Location:user/");
+                        header("Location:user/welcome.php");
                     } else {
                         header("Location:./");
                     }

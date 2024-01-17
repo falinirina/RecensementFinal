@@ -9,12 +9,16 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.Top-head>.card{
+.card
+{
+    width: 32%;
+    padding: 15px;
+    /* background-color: white; */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
     transition: 0.2s;
-    animation: anim 0.2s;
-    animation-fill-mode: backwards;
-  }
-
+    animation: 0.2s cube;
+}
 .card:nth-child(1) .card-header-title {background: linear-gradient(45deg, #464545, #989898);}
 .card:nth-child(2) .card-header-title {background: linear-gradient(45deg, #9c27b0, #d97ce8);}
 .card:nth-child(3) .card-header-title {background: linear-gradient(45deg, #73d008, #a3d26d);}
@@ -42,33 +46,4 @@
     padding: 32px 0;
     font-size: 16px;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
-}
-.card
-{
-    width: 32%;
-    padding: 15px;
-    /* background-color: white; */
-    border-radius: 15px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
-    transition: 0.2s;
-    /* animation: 0.2s anim2; */
-}
-.Top-head>.card:nth-child(1) {animation-delay: 0.2s;}
-.Top-head>.card:nth-child(2) {animation-delay: 0.4s;}
-.Top-head>.card:nth-child(3) {animation-delay: 0.6s;}
-@keyframes anim
-{
-    from
-    {
-        transform: translateX(120px);
-        opacity: 0;
-    }
-}
-@keyframes anim2
-{
-    from
-    {
-        opacity: 0;
-        transform: translateY(120px);
-    }
 }

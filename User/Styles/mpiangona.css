@@ -36,11 +36,38 @@
     box-shadow: 3px 3px #00000017;
     margin-bottom: 10px;
     transition: 0.2s;
-    animation: anim 0.2s;
+    animation: fromDown 0.2s;
     animation-fill-mode: backwards;
     width: 99%;
     align-items: center;
 }
+.mpiangona:nth-child(2) {animation-delay: 0.05s;}
+.mpiangona:nth-child(3) {animation-delay: 0.1s;}
+.mpiangona:nth-child(4) {animation-delay: 0.15s;}
+.mpiangona:nth-child(5) {animation-delay: 0.2s;}
+.mpiangona:nth-child(6) {animation-delay: 0.25s;}
+.mpiangona:nth-child(7) {animation-delay: 0.3s;}
+.mpiangona:nth-child(8) {animation-delay: 0.35s;}
+.mpiangona:nth-child(9) {animation-delay: 0.4s;}
+.mpiangona:nth-child(10) {animation-delay: 0.45s;}
+.mpiangona:nth-child(11) {animation-delay: 0.5s;}
+.mpiangona:nth-child(12) {animation-delay: 0.55s;}
+.mpiangona:nth-child(13) {animation-delay: 0.6s;}
+.mpiangona:nth-child(14) {animation-delay: 0.65s;}
+.mpiangona:nth-child(15) {animation-delay: 0.7s;}
+.mpiangona:nth-child(16) {animation-delay: 0.75s;}
+.mpiangona:nth-child(17) {animation-delay: 0.8s;}
+.mpiangona:nth-child(18) {animation-delay: 0.85s;}
+.mpiangona:nth-child(19) {animation-delay: 0.9s;}
+.mpiangona:nth-child(20) {animation-delay: 0.95s;}
+.mpiangona:nth-child(21) {animation-delay: 1.0s;}
+.pagination
+{
+    animation: fromDown 0.2s;
+    animation-fill-mode: backwards;
+    animation-delay: 1.2s;
+}
+
 .photo > img {
     height: 90px;
 }
@@ -73,4 +100,17 @@
     margin-top: 90px;
     font-size: 100px;
     text-align: center;
+}
+.ajouterForm
+{
+    display: flex;
+    align-items: center;
+}
+@keyframes fromDown
+{
+    from
+    {
+        transform: translateY(120px);
+        opacity: 0;
+    }
 }

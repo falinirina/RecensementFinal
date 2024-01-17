@@ -1,5 +1,6 @@
 <?php
     require_once "../Configurations/config.php";
+    require_once "../Configurations/sampana.php";
 
     $faritra = $bdd->query("SELECT idFaritra,nomFaritra FROM faritra ORDER BY idFaritra");
     $faritra = $faritra->fetchAll();
@@ -175,6 +176,31 @@
     <div id="zanakaDiv2"></div>
 </div>
 
+
+
+<div id="selectSampana">
+    <div class="bg-color ui form">
+        <div class="title">Selectionner Sampana</div>
+        <table class="ui table">
+            <?php
+                foreach ($sampana as $one)
+                {
+                    ?>
+                    <tr>
+                        <td><label for="<?= $one[2] ?>"><?= $one[1] ?></label></td>
+                        <td><input type="checkbox" id="<?= $one[2] ?>"></td>
+                    </tr>
+                    <?php
+                }
+            ?>
+        </table>
+        <div class="buttonDiv">
+            <button class="ui button green" onclick="confirmSA()">Confirmer</button>
+            <a class="ui button red" onclick="closeSA()">Annuler</a>
+        </div>
+    </div>
+</div>
+
 <div id="addPersonne">
     <div class="form01 ui form bg-color">
         <div style="display:flex;justify-content: space-around;
@@ -234,7 +260,8 @@
                 <div class="divFlexPers">
                     <div>
                         <label class="ui label" for="sampana">Sampana</label>
-                        <input type="text" id="sampana">
+                        <input type="text" id="sampana" disabled>
+                        <i class="ui icon edit" id="editSampana" onclick="openSA()"></i>
                     </div>
                     
                     <div>
@@ -427,6 +454,67 @@
             statusApp.additional = "zanaka"
             statusApp.idOpt = getId
         }
+    }
+    function openSA()
+    {
+        var data = $("#sampana").val()
+
+        var sampana = []
+        <?php
+            foreach ($sampana as $one)
+            {
+                ?>
+                document.getElementById("<?= $one[2] ?>").checked = false
+                <?php
+            }
+        ?>
+        if (data.length > 0)
+        {
+            sampana = data.split("-")
+        }
+        var count = sampana.length
+        for (var i = 0; i < count; i++)
+        {
+            document.getElementById(sampana[i]).checked = true
+        }
+
+        console.log(sampana)
+        $("#selectSampana").css("display", "flex")
+    }
+    function closeSA()
+    {
+        $("#selectSampana").css("display", "none")
+    }
+    function confirmSA()
+    {
+        var sampana = []
+        var sampanaFinal = ""
+        var count = 0
+        <?php
+            foreach ($sampana as $one)
+            {
+                ?>
+                if (document.getElementById("<?= $one[2] ?>").checked == true)
+                {
+                    sampana[count] = "<?= $one[2] ?>"
+                    count++
+                }
+                <?php
+            }
+        ?>
+        if (count > 0)
+        {
+            sampanaFinal = sampana[0]
+            if (count > 1)
+            {
+                for (var i = 1; i < count; i++)
+                {
+                    sampanaFinal += "-" + sampana[i]
+                }
+            }
+        }
+        $("#sampana").val(sampanaFinal)
+        closeSA()
     }
     function ajouterReny()
     {

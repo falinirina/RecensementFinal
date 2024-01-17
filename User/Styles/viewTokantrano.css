@@ -290,7 +290,7 @@ hr
 }
 .mariasy .buttonDiv
 {
-    position: absolute;
-    margin-top: -215px;
+    /* position: absolute; */
+    margin-top: -50px !important;
     margin-left: 200px;
 }

@@ -9,10 +9,10 @@
         <a id="ajouterT" href="addTokantrano.php"><i class="ui icon add circle"></i></a>
     </div>
     <div class="ui form" id="form-search">
+        <input type="text" name="search" placeholder="Recherche tokantrano" id="search">
         <button class="ui white button">
             <i class="ui icon search"></i>
         </button>
-        <input type="text" name="search" placeholder="Recherche tokantrano" id="search">
     </div>
 </div>
 <div class="cont-tokantrano">

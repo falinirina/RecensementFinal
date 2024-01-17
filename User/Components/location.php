@@ -14,10 +14,10 @@
         <div id="ajouterFok"><button class="ui button" onclick="ajouterFok()">Ajouter Fokontany</button></div>
     </div>
     <div class="ui form" id="form-search">
+        <input type="text" name="search" placeholder="Recherche location" id="search">
         <button class="ui white button">
             <i class="ui icon search"></i>
         </button>
-        <input type="text" name="search" placeholder="Recherche location" id="search">
     </div>
 </div>
 

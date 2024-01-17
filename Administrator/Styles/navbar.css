@@ -112,15 +112,15 @@ border-radius: 50%;
     margin-right: 0px;
     text-align: center;
     padding-left: 30px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 #form-search input{
     width: 175px;
     transition: 0.3s;
     margin-right: 0px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 #form-search input:focus{
     width: 250px;
@@ -193,18 +193,6 @@ border-radius: 50%;
 @keyframes fromRight{
     from {
         right: -200px;
-    }
-}
-@keyframes fromBottom
-{
-    from {
-        transform: translateY(200px);
-    }
-}
-@keyframes zoomEffet
-{
-    from {
-        transform: scale(0);
     }
 }
 .ui.icon

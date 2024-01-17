@@ -64,7 +64,7 @@ hr
     align-items: center;
     text-align: center;
 }
-#addPersonne
+#addPersonne, #selectSampana
 {
     display: none;
     position: fixed;
@@ -86,6 +86,7 @@ hr
     margin-top: 120px;
     margin-bottom: 54px;
     border-radius: 15px;
+    animation: fromBottom 0.3s;
 }
 #addPersonne .divFlexPers {
     display: flex;
@@ -287,4 +288,31 @@ hr
 #zanakaDiv2
 {
     margin-top: 15px;
+}
+#editSampana
+{
+    position: absolute;
+    font-size: 25px;
+    margin-left: -35px !important;
+}
+#selectSampana
+{
+    z-index: 11;
+}
+#selectSampana>.ui.form
+{
+    padding: 15px;
+    border-radius: 15px;
+    animation: zoomEffet 0.3s;
+}
+#selectSampana .title
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+#selectSampana .buttonDiv
+{
+    display: flex;
+    justify-content: space-between;
 }
