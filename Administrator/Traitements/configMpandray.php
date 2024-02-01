@@ -1,7 +1,8 @@
 <?php
+    
     require_once "../../Configurations/config.php";
     
-    $res = $bdd->query("SELECT * FROM personne WHERE mpandrayPersonne='eny' AND parcelleMpandrayPersonne IS NULL");
+    $res = $bdd->query("SELECT * FROM personne WHERE mpandrayPersonne='eny'");
     $res = $res->fetchAll();
 
     foreach ($res as $personne)
@@ -47,7 +48,8 @@
         }
         // var_dump($data);
         // Inserer Data
-        $bdd->query("UPDATE personne SET parcelleMpandrayPersonne='".$data['parcelle']."', updateMpandrayPersonne = CURRENT_TIMESTAMP() WHERE idPersonne=".$personne['idPersonne']);
+        $bdd->query("UPDATE personne SET parcelleMpandrayPersonne='".$data['parcelle']."' WHERE idPersonne=".$personne['idPersonne']);
     }
-    header("Location: ../listMpiangona.php");
+    header("Location: configDefinitif.php");
+
 ?>

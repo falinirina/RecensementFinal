@@ -1,4 +1,34 @@
 <?php
+    function tableMpandray($data)
+    {
+        $count = 1;
+        ?>
+        <div class="listeDiv">
+            <table class="ui table">
+                <tr>
+                    <th>Numero</th>
+                    <th>Nom</th>
+                    <th>Prenoms</th>
+                    <th>Zana-Paritra</th>
+                </tr>
+                <?php
+                foreach ($data as $mpiangona)
+                {
+                    ?>
+                    <tr>
+                        <td><?= $count ?></td>
+                        <td><?= $mpiangona['nomPersonne'] ?></td>
+                        <td><?= $mpiangona['prenomPersonne'] ?></td>
+                        <td><?= $mpiangona['nomZanaParitra'] ?></td>
+                    </tr>
+                    <?php
+                    $count++;
+                }
+                ?>
+            </table>
+        </div>
+        <?php
+    }
     if (isset($_GET["categorie"]) && isset($_GET["faritra"]) && isset($_GET["type"]))
     {
         $categorie = htmlspecialchars($_GET["categorie"]);
@@ -25,43 +55,43 @@
                 <body>
                     <div id="contenue">
                         <?php
-                                if ($type == "all")
-                                {
-                                    $dataMpiangona = $bdd->query("SELECT * FROM personne INNER JOIN parcelle ON personne.parcelleMpandrayPersonne = parcelle.idParcelle INNER JOIN fokontany ON parcelle.fokontanyParcelle = fokontany.idFokontany
-                                    INNER JOIN zanaparitra ON fokontany.zanaParitraFokontany = zanaparitra.idZanaParitra INNER JOIN faritra ON zanaparitra.faritraZanaParitra = faritra.idFaritra WHERE personne.mpandrayPersonne = 'eny' AND faritra.idFaritra = $faritra ORDER BY nomPersonne, prenomPersonne");
-                                    $total = $dataMpiangona->rowCount();
-                                    $dataMpiangona = $dataMpiangona->fetchAll();
-                                    $count = 1;
-                                    // var_dump($dataMpiangona);
-                                    ?>
-                                    <div class="bg-color gTitle">Liste Mpandray Faritra <?= $faritraData["nomFaritra"] ?> / Total: <?= $total ?></div>
-                                    <div class="listeDiv">
-                                        <table class="ui table">
-                                            <tr>
-                                                <th>Numero</th>
-                                                <th>Nom</th>
-                                                <th>Prenoms</th>
-                                                <th>Zana-Paritra</th>
-                                            </tr>
-                                            <?php
-                                            foreach ($dataMpiangona as $mpiangona)
-                                            {
-                                                ?>
-                                                <tr>
-                                                    <td><?= $count ?></td>
-                                                    <td><?= $mpiangona['nomPersonne'] ?></td>
-                                                    <td><?= $mpiangona['prenomPersonne'] ?></td>
-                                                    <td><?= $mpiangona['nomZanaParitra'] ?></td>
-                                                </tr>
-                                                <?php
-                                                $count++;
-                                            }
-                                            ?>
-                                        </table>
-                                    </div>
-                                    <?php
-                                }
-                            ?>
+                            if ($type == "all")
+                            {
+                                $dataMpiangona = $bdd->query("SELECT * FROM personne INNER JOIN parcelle ON personne.parcelleMpandrayPersonne = parcelle.idParcelle INNER JOIN fokontany ON parcelle.fokontanyParcelle = fokontany.idFokontany
+                                INNER JOIN zanaparitra ON fokontany.zanaParitraFokontany = zanaparitra.idZanaParitra INNER JOIN faritra ON zanaparitra.faritraZanaParitra = faritra.idFaritra WHERE personne.mpandrayPersonne = 'eny' AND faritra.idFaritra = $faritra ORDER BY nomPersonne, prenomPersonne");
+                                $total = $dataMpiangona->rowCount();
+                                $dataMpiangona = $dataMpiangona->fetchAll();
+                                // var_dump($dataMpiangona);
+                                ?>
+                                <div class="bg-color gTitle">Liste Mpandray Faritra <?= $faritraData["nomFaritra"] ?> / Total: <?= $total ?></div>
+                                <?php
+                                tableMpandray($dataMpiangona);
+                            } else if ($type == "old")
+                            {
+                                $dataMpiangona = $bdd->query("SELECT * FROM personne INNER JOIN parcelle ON personne.parcelleMpandrayPersonne = parcelle.idParcelle INNER JOIN fokontany ON parcelle.fokontanyParcelle = fokontany.idFokontany
+                                INNER JOIN zanaparitra ON fokontany.zanaParitraFokontany = zanaparitra.idZanaParitra INNER JOIN faritra ON zanaparitra.faritraZanaParitra = faritra.idFaritra WHERE personne.mpandrayPersonne = 'eny' AND faritra.idFaritra = $faritra AND updateMpandrayPersonne IS NULL ORDER BY nomPersonne, prenomPersonne");
+                                $total = $dataMpiangona->rowCount();
+                                $dataMpiangona = $dataMpiangona->fetchAll();
+                                $count = 1;
+                                // var_dump($dataMpiangona);
+                                ?>
+                                <div class="bg-color gTitle">Liste Mpandray Faritra <?= $faritraData["nomFaritra"] ?> Taloha / Total: <?= $total ?></div>
+                                <?php
+                                tableMpandray($dataMpiangona);
+                            } else if ($type == "new")
+                            {
+                                $dataMpiangona = $bdd->query("SELECT * FROM personne INNER JOIN parcelle ON personne.parcelleMpandrayPersonne = parcelle.idParcelle INNER JOIN fokontany ON parcelle.fokontanyParcelle = fokontany.idFokontany
+                                INNER JOIN zanaparitra ON fokontany.zanaParitraFokontany = zanaparitra.idZanaParitra INNER JOIN faritra ON zanaparitra.faritraZanaParitra = faritra.idFaritra WHERE personne.mpandrayPersonne = 'eny' AND faritra.idFaritra = $faritra AND updateMpandrayPersonne IS NOT NULL ORDER BY nomPersonne, prenomPersonne");
+                                $total = $dataMpiangona->rowCount();
+                                $dataMpiangona = $dataMpiangona->fetchAll();
+                                $count = 1;
+                                // var_dump($dataMpiangona);
+                                ?>
+                                <div class="bg-color gTitle">Liste Mpandray Faritra <?= $faritraData["nomFaritra"] ?> Vaovao / Total: <?= $total ?></div>
+                                <?php
+                                tableMpandray($dataMpiangona);
+                            }
+                        ?>
                     </div>
                 </body>
                 </html>
