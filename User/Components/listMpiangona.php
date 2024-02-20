@@ -40,7 +40,7 @@
                         </td>
                         <td>
                             <div class="dropdown">
-                                <button class="dropbtn ui button">Sivily</button>
+                                <button class="dropbtn ui button">Ara-pinoana</button>
                                 <div class="dropdown-content">
                                     <a href="liste.php?categorie=marapinoana&faritra=<?= $row["idFaritra"] ?>&type=vita" target="_">Vita</a>
                                     <a href="liste.php?categorie=marapinoana&faritra=<?= $row["idFaritra"] ?>&type=tvita" target="_">Tsy Vita</a>

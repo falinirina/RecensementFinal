@@ -32,7 +32,7 @@
 
             $page=$nbr/10;
             $nbrpage=($page <= ((int)$page)? ((int)$page) : ((int)$page) + 1);
-            return $nbrpage;
+            return ($nbrpage - 1);
         }
         public static function affiche($bdd,$data,$nbrpage,$index=1)
         {

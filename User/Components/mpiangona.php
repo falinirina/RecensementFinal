@@ -6,8 +6,11 @@
 
 <div class="filtre-mpiangona">
     <div class="ajouterForm">
-        <div><a class="ui button">Filtre</a></div>
         <div><a href="Traitements/configMpandray.php" class="ui button">Liste</a></div>
+        <div><a class="ui button">Filtre</a></div>
+    </div>
+    <div>
+        <div>Filtre</div>
     </div>
     <form action="mpiangona.php" method="GET" class="ui form" id="form-search">
         <input type="text" name="find" placeholder="Recherche mpiangona" id="search" required>
